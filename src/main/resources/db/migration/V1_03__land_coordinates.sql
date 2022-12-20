@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS ais.land_coordinates (
+    id BIGSERIAL,
+    longitude FLOAT8 NOT NULL,
+    latitude FLOAT8 NOT NULL,
+    land_id BIGINT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(id),
+    FOREIGN KEY (land_id) REFERENCES lands(id)
+)

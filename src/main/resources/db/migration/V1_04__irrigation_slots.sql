@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS ais.irrigation_slots (
+    id BIGSERIAL,
+    retry_count INT NOT NULL,
+    slot_status VARCHAR(50) NOT NULL,
+    land_id BIGINT NOT NULL,
+    schedule TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(id),
+    FOREIGN KEY (land_id) REFERENCES lands(id)
+)
